@@ -13,6 +13,8 @@ const config = require('./config.json');
 //=======================================
 //= CONFIGURATION  SEE config.json
 //=======================================
+//compatible with All point and click adventures
+//Sim City 2000
 
 
 const Bot = new TwitchBot({
@@ -44,6 +46,9 @@ Bot.on('message', chatter => {
   if(chatter.message === '!help') {
 	Bot.say('Input keyboard key by typing %<Key> Ex: %a = typing a');
 	Bot.say('Click on the stream to controle the mouse');
+	if ( game == "s2k" ) {
+	Bot.say('SimCity2k: %powerplant, %waterpump, %watertower');	
+	}
   }
 var name = chatter.display_name;
 var message = chatter.message;
@@ -84,6 +89,28 @@ if (game == "s2k") {
 		robot.mouseToggle("down");
 		//popup located at x48,y135
 		}
+	if (message === "%watertower") {
+		acceptInput = false
+		//button located at x30,y117
+		setTimeout(acceptInputTrue, 5000);
+		setTimeout(waterPump,2000);
+		Bot.say("Input paused for getting watertower...")
+		robot.moveMouse(50,111)
+		robot.mouseClick();
+		robot.mouseToggle("down");
+		//popup located at x48,y135
+		}
+	if (message === "%lightres") {
+		acceptInput = false
+		//button located at x30,y117
+		setTimeout(acceptInputTrue, 5000);
+		setTimeout(lighres,2000);
+		Bot.say("Input paused for getting watertower...")
+		robot.moveMouse(30,156)
+		robot.mouseClick();
+		robot.mouseToggle("down");
+		//popup located at x48,y135
+		}
 	}
 
  if(chatter.message === '%return') {
@@ -94,7 +121,10 @@ if (game == "s2k") {
 	
 	}
 });
-
+function lightRes(){
+	robot.dragMouse(48,160)
+	robot.mouseToggle("up")
+}
 function selectPower(){
 	robot.dragMouse(48,135)
 	robot.mouseToggle("up")
@@ -103,6 +133,10 @@ function waterPump(){
 	robot.dragMouse(72,133)
 	robot.mouseToggle("up")
 }
+function waterTower() {
+	robot.dragMouse(72,153)
+	robot.mouseToggle("up")
+	}
 
 //output keypress
 function keytap(keypress,name) {
@@ -171,7 +205,9 @@ if (cx > minX && cx < maxX && cy > minY && cy < maxY){
 console.log(clickData.x, clickData.y);
 if (gamemode = "click") {
 robot.moveMouse(clickData.x * 800,clickData.y * 600);
-robot.mouseClick();
+if ( game == "s2k" ){
+}
+else { robot.mouseClick(); }
 }
 }
 console.dir(clickData);
