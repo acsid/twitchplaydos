@@ -49,7 +49,7 @@ if (message.length === 2) {
 	switch(chatter.message.charAt(0)){
 		//key input command
 		case '%':
-			robot.keytap(chatter.message.charAt(1))
+			robot.keyTap(chatter.message.charAt(1))
 			keytap(chatter.message.charAt(1))
 			break;
 	}
