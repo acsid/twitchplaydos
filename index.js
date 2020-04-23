@@ -65,7 +65,7 @@ if (message.length === 2) {
 //output keypress
 function keytap(keypress,name) {
 	var data = [["key",keypress],["name",name]]
-	ioServer.emit("keypress",keypress)
+	ioServer.emit("keypress",data)
 	console.log(name + keypress)
 }
 
