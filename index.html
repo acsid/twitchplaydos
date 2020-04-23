@@ -21,8 +21,8 @@
 
     var socket = io();
 
-   socket.on('keypress', function(msg,name){
-	      $('#messages').prepend($('<li>').text( name + " KeyPress {"+ msg +" }"));
+   socket.on('keypress', function(msg){
+	      $('#messages').prepend($('<li>').text( msg.name + " KeyPress {"+ msg.key +" }"));
 
 });
 
