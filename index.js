@@ -48,15 +48,17 @@ Bot.on('message', chatter => {
 
   if(chatter.message === '%a') {
 	robot.keyTap("a");
+	keytap("a");
 	}
  if(chatter.message === '%return') {
-	robot.keyTap("enter")
+	robot.keyTap("enter");
+	keytap("return");
 	}
 });
 
 //output keypress
 function keytap(keypress) {
-ioServer.emit("keytap",keypress)
+ioServer.emit("keypress",keypress)
 
 }
 

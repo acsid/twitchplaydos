@@ -20,6 +20,12 @@
 <script>
 
     var socket = io();
+
+   socket.on('keyPress', function(msg){
+	      $('#messages').prepend($('<li>').text(KeyPress + "{"+ msg +" }"));
+
+});
+
     socket.on('clickData', function(msg){
       $('#messages').prepend($('<li>').text(msg.type + "{x:" + Math.round(msg.x * 800) + " y: " +Math.round( msg.y * 600) +" }"));
    var list = document.getElementById("messages")
