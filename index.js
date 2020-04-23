@@ -44,7 +44,7 @@ Bot.on('message', chatter => {
   }
 var name = chatter.display_name;
 //keyboard input
-if (chatter.message.str === 2) {
+if (chatter.message.str.length === 2) {
 	switch(chatter.message.charAt(0)){
 		//key input command
 		case '%':
