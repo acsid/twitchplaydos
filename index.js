@@ -72,7 +72,16 @@ if (game == "s2k") {
 		robot.mouseToggle("down");
 		//popup located at x48,y135
 		}
-	
+	if (message = "%waterpump") {
+		acceptInput = false
+		//button located at x30,y117
+		setTimeout(acceptInputTrue, 5000);
+		setTimeout(waterPump,2000);
+		Bot.say("Input paused for getting waterpump...")
+		robot.moveMouse(50,111)
+		robot.mouseToggle("down");
+		//popup located at x48,y135
+		}
 	}
 
  if(chatter.message === '%return') {
@@ -87,7 +96,11 @@ if (game == "s2k") {
 function selectPower(){
 	robot.dragMouse(48,135)
 	robot.mouseToggle("up")
-	}
+}
+function waterPump(){
+	robot.dragMouse(48,135)
+	robot.mouseToggle("up")
+}
 
 //output keypress
 function keytap(keypress,name) {
