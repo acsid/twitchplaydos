@@ -32,6 +32,10 @@ Bot.on('connected', () =>{
 Bot.on('error', err => {
   console.log(err)
 })
+
+//possible "click" "arakey"
+
+var gameMode = "click";
  
 Bot.on('message', chatter => {
   if(chatter.message === '!test') {
@@ -39,6 +43,14 @@ Bot.on('message', chatter => {
   }
   if(chatter.message === '%return') {
 	//press return
+	}
+
+
+  if(chatter.message === '%a') {
+	robot.keyTap("a");
+	}
+ if(chatter.message === '%return' {
+	robot.keyTap("enter")
 	}
 });
 
@@ -94,31 +106,17 @@ var cy = clickData.y * screenY
 if (cx > minX && cx < maxX && cy > minY && cy < maxY){
     console.log("validclick")
 console.log(clickData.x, clickData.y);
+if (gamemode = "click") {
 robot.moveMouse(clickData.x * 800,clickData.y * 600);
 robot.mouseClick();
 }
+}
 console.dir(clickData);
 ioServer.emit("clickData",clickData)
-
-api.user.getByID({ userID: clickData.id }, (err, res) => {
-    if(err) {
-        console.log(err);
-    } else {
-        console.log(res);
-        /* Example response
-        {
-            display_name: 'Twitch',
-            _id: '12826',
-            name: 'twitch',
-            type: 'user',
-            ...
-        }
-        */
-    }
-});
 
 //console.log(clickData.x, clickData.y);
 //robot.moveMouse(clickData.x * 800,clickData.y * 600);
 //robot.mouseClick();
 });
+
 
