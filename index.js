@@ -49,7 +49,7 @@ Bot.on('message', chatter => {
   if(chatter.message === '%a') {
 	robot.keyTap("a");
 	}
- if(chatter.message === '%return' {
+ if(chatter.message === '%return') {
 	robot.keyTap("enter")
 	}
 });
