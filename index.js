@@ -145,7 +145,7 @@ if (game == "s2k") {
 		robot.mouseToggle("down");
 		//popup located at x48,y135
 		}
-	}
+	
 	if (message === "%lightind") {
 		acceptInput = false
 		//button located at x30,y117
@@ -219,9 +219,8 @@ if (game == "s2k") {
 	robot.keyTap("enter");
 	keytap("return");
 	}
+}
 	
-	
-	}
 });
 function selectSchool(){
 	robot.dragMouse(39,186)
