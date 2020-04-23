@@ -22,7 +22,7 @@
     var socket = io();
 
    socket.on('keypress', function(msg){
-	      $('#messages').prepend($('<li>').text( msg.name + " KeyPress {"+ msg.key +" }"));
+	      $('#messages').prepend($('<li>').text( msg.name + " KB{"+ msg.key +"}"));
 		console.log(msg);
 });
 

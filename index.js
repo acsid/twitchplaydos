@@ -36,6 +36,9 @@ Bot.on('error', err => {
 //possible "click" "arakey"
 
 var gameMode = "click";
+var game = "s2k";
+
+var acceptInput = true;
  
 Bot.on('message', chatter => {
   if(chatter.message === '!help') {
@@ -46,6 +49,8 @@ var name = chatter.display_name;
 var message = chatter.message;
 //keyboard input
 console.log(chatter);
+
+if (acceptInput) {
 if (message.length === 2) {
 	switch(chatter.message.charAt(0)){
 		//key input command
@@ -56,9 +61,22 @@ if (message.length === 2) {
 	}
 	}
 
+if (game == "s2k") {
+	if (message = "%powerplant") {
+		acceptInput = false
+		setTimeout(acceptInputTrue, 3000);
+		Bot.say("Input paused for Powerplant menu...")
+		
+		}
+	
+	}
+
  if(chatter.message === '%return') {
 	robot.keyTap("enter");
 	keytap("return");
+	}
+	
+	
 	}
 });
 
@@ -67,6 +85,11 @@ function keytap(keypress,name) {
 	var data = { key: keypress, name: name};
 	ioServer.emit("keypress",data)
 	console.log(name + data)
+}
+
+function acceptInputTrue() {
+	acceptInput = true
+	Bot.say("Input Accepted")
 }
 
 
@@ -117,7 +140,7 @@ const clickData = JSON.parse(data);
 console.log(robot.getMousePos());
 var cx = clickData.x * screenX
 var cy = clickData.y * screenY
-
+if (acceptInput) {
 if (cx > minX && cx < maxX && cy > minY && cy < maxY){
     console.log("validclick")
 console.log(clickData.x, clickData.y);
@@ -128,7 +151,7 @@ robot.mouseClick();
 }
 console.dir(clickData);
 ioServer.emit("clickData",clickData)
-
+}
 //console.log(clickData.x, clickData.y);
 //robot.moveMouse(clickData.x * 800,clickData.y * 600);
 //robot.mouseClick();
