@@ -62,7 +62,7 @@ if (message.length === 2) {
 	}
 
 if (game == "s2k") {
-	if (message = "%powerplant") {
+	if (message === "%powerplant") {
 		acceptInput = false
 		//button located at x30,y117
 		setTimeout(acceptInputTrue, 5000);
@@ -73,7 +73,7 @@ if (game == "s2k") {
 		robot.mouseToggle("down");
 		//popup located at x48,y135
 		}
-	if (message = "%waterpump") {
+	if (message === "%waterpump") {
 		acceptInput = false
 		//button located at x30,y117
 		setTimeout(acceptInputTrue, 5000);
