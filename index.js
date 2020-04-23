@@ -68,7 +68,7 @@ if (game == "s2k") {
 		setTimeout(acceptInputTrue, 5000);
 		setTimeout(selectPower,2000);
 		Bot.say("Input paused for Powerplant menu...")
-		robot.moveMouse(30,117)
+		robot.moveMouse(30,107)
 		robot.mouseClick();
 		robot.mouseToggle("down");
 		//popup located at x48,y135
