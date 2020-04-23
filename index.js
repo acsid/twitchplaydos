@@ -84,7 +84,7 @@ if (game == "s2k") {
 	}
 });
 
-function selectPower{
+function selectPower(){
 	robot.dragMouse(48,135)
 	robot.mouseToggle("up")
 	}
