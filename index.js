@@ -104,7 +104,18 @@ if (game == "s2k") {
 		acceptInput = false
 		//button located at x30,y117
 		setTimeout(acceptInputTrue, 5000);
-		setTimeout(lighres,2000);
+		setTimeout(lightRes,2000);
+		Bot.say("Input paused for getting watertower...")
+		robot.moveMouse(30,156)
+		robot.mouseClick();
+		robot.mouseToggle("down");
+		//popup located at x48,y135
+		}
+	if (message === "%denseres") {
+		acceptInput = false
+		//button located at x30,y117
+		setTimeout(acceptInputTrue, 5000);
+		setTimeout(denseRes,2000);
 		Bot.say("Input paused for getting watertower...")
 		robot.moveMouse(30,156)
 		robot.mouseClick();
@@ -123,6 +134,10 @@ if (game == "s2k") {
 });
 function lightRes(){
 	robot.dragMouse(48,160)
+	robot.mouseToggle("up")
+}
+function denseRes(){
+	robot.dragMouse(48,180)
 	robot.mouseToggle("up")
 }
 function selectPower(){
