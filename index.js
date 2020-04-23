@@ -100,7 +100,7 @@ function selectPower(){
 	robot.mouseToggle("up")
 }
 function waterPump(){
-	robot.dragMouse(48,135)
+	robot.dragMouse(72,133)
 	robot.mouseToggle("up")
 }
 
