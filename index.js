@@ -43,8 +43,9 @@ Bot.on('message', chatter => {
 	Bot.say('Click on the stream to controle the mouse');
   }
 var name = chatter.display_name;
+var message = chatter.message;
 //keyboard input
-if (chatter.message.str.length === 2) {
+if (message.length === 2) {
 	switch(chatter.message.charAt(0)){
 		//key input command
 		case '%':
