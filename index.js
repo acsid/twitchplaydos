@@ -7,7 +7,7 @@ var express = require('express')();
 var http = require('http').createServer(express);
 
 var ioServer = require('socket.io')(http);
-
+const config = require('./config.json');
 
 
 //=======================================
@@ -21,7 +21,7 @@ var heat_channelId = '';
 
 const Bot = new TwitchBot({
 	username: 'DOSBOT',
-	oauth : Twitch_oauth,
+	oauth : config.twitch.oauth,
 	channels: ['twitchplaydos']
 	})
 
@@ -63,9 +63,6 @@ http.listen(3000, () => {
 });
 
 
-api.clientID = 'zcvye4ftcefi6j8b89d8vrsqu3q1g1';
-
-
 console.log(robot.getMousePos());
 
 var minX = 3
@@ -78,7 +75,7 @@ var screenY = 600
 
 
 socket.on('connect', () => {
-socket.emit("channel",heat_channelId)
+socket.emit("channel",config.heat.id)
 });
 
 
