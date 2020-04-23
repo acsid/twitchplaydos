@@ -64,9 +64,13 @@ if (message.length === 2) {
 if (game == "s2k") {
 	if (message = "%powerplant") {
 		acceptInput = false
-		setTimeout(acceptInputTrue, 3000);
+		//button located at x30,y117
+		setTimeout(acceptInputTrue, 5000);
+		setTimeout(selectPower,2000);
 		Bot.say("Input paused for Powerplant menu...")
-		
+		robot.moveMouse(30,117)
+		robot.mouseToggle("down");
+		//popup located at x48,y135
 		}
 	
 	}
@@ -80,6 +84,11 @@ if (game == "s2k") {
 	}
 });
 
+function selectPower{
+	robot.dragMouse(48,135)
+	robot.mouseToggle("up")
+	}
+
 //output keypress
 function keytap(keypress,name) {
 	var data = { key: keypress, name: name};
@@ -89,6 +98,7 @@ function keytap(keypress,name) {
 
 function acceptInputTrue() {
 	acceptInput = true
+	robot.mouseToggle("up")
 	Bot.say("Input Accepted")
 }
 
