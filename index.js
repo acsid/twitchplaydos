@@ -11,12 +11,8 @@ const config = require('./config.json');
 
 
 //=======================================
-//= CONFIGURATION
+//= CONFIGURATION  SEE config.json
 //=======================================
-
-var Twitch_oauth = '';
-var heat_channelId = '';
-
 
 
 const Bot = new TwitchBot({
@@ -44,7 +40,14 @@ Bot.on('message', chatter => {
   if(chatter.message === '%return') {
 	//press return
 	}
-})
+});
+
+
+
+
+
+Bot.say('Bot Controller Online');
+
 
 express.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
@@ -94,7 +97,7 @@ robot.mouseClick();
 console.dir(clickData);
 ioServer.emit("clickData",clickData)
 
-/*api.user.getByID({ userID: clickData.id }, (err, res) => {
+api.user.getByID({ userID: clickData.id }, (err, res) => {
     if(err) {
         console.log(err);
     } else {
@@ -107,10 +110,10 @@ ioServer.emit("clickData",clickData)
             type: 'user',
             ...
         }
-        ///
+        */
     }
 });
-*/
+
 //console.log(clickData.x, clickData.y);
 //robot.moveMouse(clickData.x * 800,clickData.y * 600);
 //robot.mouseClick();
