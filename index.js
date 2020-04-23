@@ -45,6 +45,7 @@ Bot.on('message', chatter => {
 var name = chatter.display_name;
 var message = chatter.message;
 //keyboard input
+console.log(chatter);
 if (message.length === 2) {
 	switch(chatter.message.charAt(0)){
 		//key input command
@@ -53,7 +54,6 @@ if (message.length === 2) {
 			keytap(chatter.message.charAt(1))
 			break;
 	}
-
 	}
 
  if(chatter.message === '%return') {
