@@ -68,6 +68,9 @@ http.listen(3000, () => {
 
 console.log(robot.getMousePos());
 
+api.clientID = config.twitch.apiId;
+
+
 var minX = 3
 var maxX = 643
 var minY = 35
