@@ -54,7 +54,11 @@ Bot.on('message', chatter => {
 	}
 });
 
+//output keypress
+function keytap(keypress) {
+ioServer.emit("keytap",keypress)
 
+}
 
 
 
