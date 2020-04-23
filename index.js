@@ -45,9 +45,10 @@ var acceptInput = true;
 Bot.on('message', chatter => {
   if(chatter.message === '!help') {
 	Bot.say('Input keyboard key by typing %<Key> Ex: %a = typing a');
-	Bot.say('Click on the stream to controle the mouse');
+	Bot.say('Click on the stream to control the mouse');
 	if ( game == "s2k" ) {
 	Bot.say('SimCity2k: %powerplant, %waterpump, %watertower');	
+	Bot.say('Zone: Residential(Light: %lightres, Dense: %denseres) ')
 	}
   }
 var name = chatter.display_name;
@@ -105,7 +106,7 @@ if (game == "s2k") {
 		//button located at x30,y117
 		setTimeout(acceptInputTrue, 5000);
 		setTimeout(lightRes,2000);
-		Bot.say("Input paused for getting watertower...")
+		Bot.say("Input paused for getting Light Residential...")
 		robot.moveMouse(30,156)
 		robot.mouseClick();
 		robot.mouseToggle("down");
@@ -116,8 +117,98 @@ if (game == "s2k") {
 		//button located at x30,y117
 		setTimeout(acceptInputTrue, 5000);
 		setTimeout(denseRes,2000);
-		Bot.say("Input paused for getting watertower...")
+		Bot.say("Input paused for getting Dense Residential...")
 		robot.moveMouse(30,156)
+		robot.mouseClick();
+		robot.mouseToggle("down");
+		//popup located at x48,y135
+		}
+	if (message === "%lightcom") {
+		acceptInput = false
+		//button located at x30,y117
+		setTimeout(acceptInputTrue, 5000);
+		setTimeout(lightCom,2000);
+		Bot.say("Input paused for getting Light Residential...")
+		robot.moveMouse(44,156)
+		robot.mouseClick();
+		robot.mouseToggle("down");
+		//popup located at x48,y135
+		}
+	if (message === "%densecom") {
+		acceptInput = false
+		//button located at x30,y117
+		setTimeout(acceptInputTrue, 5000);
+		setTimeout(denseCom,2000);
+		Bot.say("Input paused for getting Dense Residential...")
+		robot.moveMouse(44,156)
+		robot.mouseClick();
+		robot.mouseToggle("down");
+		//popup located at x48,y135
+		}
+	}
+	if (message === "%lightind") {
+		acceptInput = false
+		//button located at x30,y117
+		setTimeout(acceptInputTrue, 5000);
+		setTimeout(lightInd,2000);
+		Bot.say("Input paused for getting Light Residential...")
+		robot.moveMouse(70,156)
+		robot.mouseClick();
+		robot.mouseToggle("down");
+		//popup located at x48,y135
+		}
+	if (message === "%denseind") {
+		acceptInput = false
+		//button located at x30,y117
+		setTimeout(acceptInputTrue, 5000);
+		setTimeout(denseInd,2000);
+		Bot.say("Input paused for getting Dense Residential...")
+		robot.moveMouse(70,156)
+		robot.mouseClick();
+		robot.mouseToggle("down");
+		//popup located at x48,y135
+		}
+		//school
+		if (message === "%school") {
+		acceptInput = false
+		//button located at x30,y117
+		setTimeout(acceptInputTrue, 5000);
+		setTimeout(selectSchool,2000);
+		Bot.say("Input paused for getting Dense Residential...")
+		robot.moveMouse(27,179)
+		robot.mouseClick();
+		robot.mouseToggle("down");
+		//popup located at x48,y135
+		}
+		if (message === "%college") {
+		acceptInput = false
+		//button located at x30,y117
+		setTimeout(acceptInputTrue, 5000);
+		setTimeout(selectCollege,2000);
+		Bot.say("Input paused for getting Dense Residential...")
+		robot.moveMouse(27,179)
+		robot.mouseClick();
+		robot.mouseToggle("down");
+		//popup located at x48,y135
+		}
+		if (message === "%library") {
+		acceptInput = false
+		//button located at x30,y117
+		setTimeout(acceptInputTrue, 5000);
+		setTimeout(selectLibrary,2000);
+		Bot.say("Input paused for getting Dense Residential...")
+		robot.moveMouse(27,179)
+		robot.mouseClick();
+		robot.mouseToggle("down");
+		//popup located at x48,y135
+		}
+		if (message === "%museum") {
+		acceptInput = false
+		//button located at x30,y117
+		setTimeout(acceptInputTrue, 5000);
+		setTimeout(selectMuseum,2000);
+		Bot.say("Input paused for getting Dense Residential...")
+		robot.moveMouse(27,179)
 		robot.mouseClick();
 		robot.mouseToggle("down");
 		//popup located at x48,y135
@@ -132,6 +223,38 @@ if (game == "s2k") {
 	
 	}
 });
+function selectSchool(){
+	robot.dragMouse(39,186)
+	robot.mouseToggle("up")
+}
+function selectCollege(){
+	robot.dragMouse(47,210)
+	robot.mouseToggle("up")
+}
+function selectLibrary(){
+	robot.dragMouse(47,219)
+	robot.mouseToggle("up")
+}
+function selectMuseum(){
+	robot.dragMouse(47,237)
+	robot.mouseToggle("up")
+}
+function lightCom(){
+	robot.dragMouse(69,160)
+	robot.mouseToggle("up")
+}
+function denseCom(){
+	robot.dragMouse(69,180)
+	robot.mouseToggle("up")
+}
+function lightInd(){
+	robot.dragMouse(75,160)
+	robot.mouseToggle("up")
+}
+function denseInd(){
+	robot.dragMouse(75,180)
+	robot.mouseToggle("up")
+}
 function lightRes(){
 	robot.dragMouse(48,160)
 	robot.mouseToggle("up")
@@ -163,7 +286,7 @@ function keytap(keypress,name) {
 function acceptInputTrue() {
 	acceptInput = true
 	robot.mouseToggle("up")
-	Bot.say("Input Accepted")
+	Bot.say("Input Reactivated")
 }
 
 
