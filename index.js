@@ -49,7 +49,7 @@ if (chatter.message.str.length === 2) {
 		//key input command
 		case '%':
 			robot.keytap(chatter.message.charAt(1))
-			keytap(chatter.message.charAt(1),name)
+			keytap(chatter.message.charAt(1))
 			break;
 	}
 
@@ -62,9 +62,9 @@ if (chatter.message.str.length === 2) {
 });
 
 //output keypress
-function keytap(keypress,name) {
-ioServer.emit("keypress",keypress,name)
-
+function keytap(keypress) {
+	ioServer.emit("keypress",keypress)
+	console.log(keypress)
 }
 
 
