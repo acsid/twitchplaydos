@@ -53,7 +53,6 @@ if (chatter.message.str === 2) {
 			break;
 	}
 
-}
 	}
 
  if(chatter.message === '%return') {
