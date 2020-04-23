@@ -45,11 +45,157 @@ Bot.on('message', chatter => {
 	//press return
 	}
 
+//keyboard input
 
-  if(chatter.message === '%a') {
-	robot.keyTap("a");
-	keytap("a");
+	switch(chatter.message){
+		case '%a':
+		robot.keyTap("a");
+	        keytap("a");
+		break;
+                case '%b':
+                robot.keyTap("b");
+                keytap("b");
+                break;
+                case '%c':
+                robot.keyTap("c");
+                keytap("c");
+                break;
+                case '%d':
+                robot.keyTap("d");
+                keytap("d");
+                break;
+                case '%e':
+                robot.keyTap("f");
+                keytap("g");
+                break;
+                case '%h':
+                robot.keyTap("h");
+                keytap("h");
+                break;
+                case '%i':
+                robot.keyTap("i");
+                keytap("i");
+                break;
+                case '%j':
+                robot.keyTap("j");
+                keytap("j");
+                break;
+                case '%k':
+                robot.keyTap("k");
+                keytap("k");
+                break;
+                case '%l':
+                robot.keyTap("l");
+                keytap("l");
+                break;
+                case '%m':
+                robot.keyTap("m");
+                keytap("m");
+                break;
+                case '%n':
+                robot.keyTap("n");
+                keytap("n");
+                break;
+                case '%o':
+                robot.keyTap("o");
+                keytap("o");
+                break;
+                case '%p':
+                robot.keyTap("p");
+                keytap("p");
+                break;
+                case '%q':
+                robot.keyTap("q");
+                keytap("q");
+                break;
+                case '%r':
+                robot.keyTap("r");
+                keytap("r");
+                break;
+                case '%s':
+                robot.keyTap("s");
+                keytap("s");
+                break;
+                case '%t':
+                robot.keyTap("t");
+                keytap("t");
+                break;
+                case '%u':
+                robot.keyTap("u");
+                keytap("u");
+                break;
+                case '%v':
+                robot.keyTap("v");
+                keytap("v");
+                break;
+                case '%w':
+                robot.keyTap("w");
+                keytap("w");
+                break;
+                case '%x':
+                robot.keyTap("x");
+                keytap("x");
+                break;
+                case '%y':
+                robot.keyTap("y");
+                keytap("y");
+                break;
+                case '%z':
+                robot.keyTap("z");
+                keytap("z");
+                break;
+                case '%1':
+                robot.keyTap("1");
+                keytap("1");
+                break;
+                case '%2':
+                robot.keyTap("2");
+                keytap("2");
+                break;
+                case '%3':
+                robot.keyTap("3");
+                keytap("3");
+                break;
+                case '%4':
+                robot.keyTap("4");
+                keytap("4");
+                break;
+                case '%5':
+                robot.keyTap("5");
+                keytap("5");
+                break;
+                case '%6':
+                robot.keyTap("6");
+                keytap("6");
+                break;
+                case '%7':
+                robot.keyTap("7");
+                keytap("7");
+                break;
+                case '%8':
+                robot.keyTap("8");
+                keytap("8");
+                break;
+                case '%9':
+                robot.keyTap("9");
+                keytap("9");
+                break;
+                case '%0':
+                robot.keyTap("0");
+                keytap("0");
+                break;
+
+
+
+
+
+
+
+
+
+
 	}
+
  if(chatter.message === '%return') {
 	robot.keyTap("enter");
 	keytap("return");
@@ -62,6 +208,8 @@ ioServer.emit("keypress",keypress)
 
 }
 
+
+//inpu
 
 
 Bot.say('Bot Controller Online');
