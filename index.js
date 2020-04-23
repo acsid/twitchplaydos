@@ -69,6 +69,7 @@ if (game == "s2k") {
 		setTimeout(selectPower,2000);
 		Bot.say("Input paused for Powerplant menu...")
 		robot.moveMouse(30,117)
+		robot.mouseClick();
 		robot.mouseToggle("down");
 		//popup located at x48,y135
 		}
@@ -79,6 +80,7 @@ if (game == "s2k") {
 		setTimeout(waterPump,2000);
 		Bot.say("Input paused for getting waterpump...")
 		robot.moveMouse(50,111)
+		robot.mouseClick();
 		robot.mouseToggle("down");
 		//popup located at x48,y135
 		}
