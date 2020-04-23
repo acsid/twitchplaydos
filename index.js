@@ -227,7 +227,7 @@ function selectSchool(){
 	robot.mouseToggle("up")
 }
 function selectCollege(){
-	robot.dragMouse(47,210)
+	robot.dragMouse(47,208)
 	robot.mouseToggle("up")
 }
 function selectLibrary(){
