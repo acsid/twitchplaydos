@@ -47,8 +47,7 @@ Bot.on('message', chatter => {
 	Bot.say('Input keyboard key by typing %<Key> Ex: %a = typing a');
 	Bot.say('Click on the stream to control the mouse');
 	if ( game == "s2k" ) {
-	Bot.say('SimCity2k: %powerplant, %waterpump, %watertower');	
-	Bot.say('Zone: Residential(Light: %lightres, Dense: %denseres) ')
+	Bot.say('SimCity2k Commands are available here: ');	
 	}
   }
 var name = chatter.display_name;
@@ -66,7 +65,9 @@ if (message.length === 2) {
 			break;
 	}
 	}
-
+	
+	
+//sim city mode should be a plugin later
 if (game == "s2k") {
 	if (message === "%powerplant") {
 		acceptInput = false
@@ -95,6 +96,17 @@ if (game == "s2k") {
 		//button located at x30,y117
 		setTimeout(acceptInputTrue, 5000);
 		setTimeout(waterPump,2000);
+		Bot.say("Input paused for getting watertower...")
+		robot.moveMouse(50,111)
+		robot.mouseClick();
+		robot.mouseToggle("down");
+		//popup located at x48,y135
+		}
+			if (message === "%treatement") {
+		acceptInput = false
+		//button located at x30,y117
+		setTimeout(acceptInputTrue, 5000);
+		setTimeout(select,2000);
 		Bot.say("Input paused for getting watertower...")
 		robot.moveMouse(50,111)
 		robot.mouseClick();
@@ -174,7 +186,7 @@ if (game == "s2k") {
 		//button located at x30,y117
 		setTimeout(acceptInputTrue, 5000);
 		setTimeout(selectSchool,2000);
-		Bot.say("Input paused for getting Dense Residential...")
+		Bot.say("Input paused for getting school...")
 		robot.moveMouse(27,179)
 		robot.mouseClick();
 		robot.mouseToggle("down");
@@ -185,7 +197,7 @@ if (game == "s2k") {
 		//button located at x30,y117
 		setTimeout(acceptInputTrue, 5000);
 		setTimeout(selectCollege,2000);
-		Bot.say("Input paused for getting Dense Residential...")
+		Bot.say("Input paused for getting college...")
 		robot.moveMouse(27,179)
 		robot.mouseClick();
 		robot.mouseToggle("down");
@@ -196,7 +208,7 @@ if (game == "s2k") {
 		//button located at x30,y117
 		setTimeout(acceptInputTrue, 5000);
 		setTimeout(selectLibrary,2000);
-		Bot.say("Input paused for getting Dense Residential...")
+		Bot.say("Input paused for getting library...")
 		robot.moveMouse(27,179)
 		robot.mouseClick();
 		robot.mouseToggle("down");
@@ -207,13 +219,146 @@ if (game == "s2k") {
 		//button located at x30,y117
 		setTimeout(acceptInputTrue, 5000);
 		setTimeout(selectMuseum,2000);
-		Bot.say("Input paused for getting Dense Residential...")
+		Bot.say("Input paused for getting museum...")
 		robot.moveMouse(27,179)
 		robot.mouseClick();
 		robot.mouseToggle("down");
 		//popup located at x48,y135
 		}
+		if (message === "%police") {
+		acceptInput = false
+		//button located at x30,y117
+		setTimeout(acceptInputTrue, 5000);
+		setTimeout(selectPolice,2000);
+		Bot.say("Input paused for getting police station...")
+		robot.moveMouse(50,185)
+		robot.mouseClick();
+		robot.mouseToggle("down");
+		//popup located at x48,y135
+		}
+		if (message === "%firestation") {
+		acceptInput = false
+		//button located at x30,y117
+		setTimeout(acceptInputTrue, 5000);
+		setTimeout(selectFire,2000);
+		Bot.say("Input paused for getting fire station...")
+		robot.moveMouse(50,185)
+		robot.mouseClick();
+		robot.mouseToggle("down");
+		//popup located at x48,y135
+		}
+		if (message === "%hospital") {
+		acceptInput = false
+		//button located at x30,y117
+		setTimeout(acceptInputTrue, 5000);
+		setTimeout(selectHospital,2000);
+		Bot.say("Input paused for getting hospital...")
+		robot.moveMouse(50,185)
+		robot.mouseClick();
+		robot.mouseToggle("down");
+		//popup located at x48,y135
+		}
+		if (message === "%prison") {
+		acceptInput = false
+		//button located at x30,y117
+		setTimeout(acceptInputTrue, 5000);
+		setTimeout(selectPrison,2000);
+		Bot.say("Input paused for getting prison...")
+		robot.moveMouse(50,185)
+		robot.mouseClick();
+		robot.mouseToggle("down");
+		//popup located at x48,y135
+		}
+				if (message === "%park") {
+		acceptInput = false
+		//button located at x30,y117
+		setTimeout(acceptInputTrue, 5000);
+		setTimeout(selectPark,2000);
+		Bot.say("Input paused for getting park...")
+		robot.moveMouse(69,185)
+		robot.mouseClick();
+		robot.mouseToggle("down");
+		//popup located at x48,y135
+		}
+						if (message === "%bigpark") {
+		acceptInput = false
+		//button located at x30,y117
+		setTimeout(acceptInputTrue, 5000);
+		setTimeout(selectBigPark,2000);
+		Bot.say("Input paused for getting big park...")
+		robot.moveMouse(69,185)
+		robot.mouseClick();
+		robot.mouseToggle("down");
+		//popup located at x48,y135
+		}
+						if (message === "%zoo") {
+		acceptInput = false
+		//button located at x30,y117
+		setTimeout(acceptInputTrue, 5000);
+		setTimeout(selectZoo,2000);
+		Bot.say("Input paused for getting park...")
+		robot.moveMouse(69,185)
+		robot.mouseClick();
+		robot.mouseToggle("down");
+		//popup located at x48,y135
+		}
+						if (message === "%stadium") {
+		acceptInput = false
+		//button located at x30,y117
+		setTimeout(acceptInputTrue, 5000);
+		setTimeout(selectStadium,2000);
+		Bot.say("Input paused for getting stadium...")
+		robot.moveMouse(69,185)
+		robot.mouseClick();
+		robot.mouseToggle("down");
+		//popup located at x48,y135
+		}
+		if (message === "%marina") {
+		acceptInput = false
+		//button located at x30,y117
+		setTimeout(acceptInputTrue, 5000);
+		setTimeout(selectMarina,2000);
+		Bot.say("Input paused for getting stadium...")
+		robot.moveMouse(69,185)
+		robot.mouseClick();
+		robot.mouseToggle("down");
+		//popup located at x48,y135
+		}
+		if (message === "%seaport") {
+		acceptInput = false
+		//button located at x30,y117
+		setTimeout(acceptInputTrue, 5000);
+		setTimeout(selectMarina,2000);
+		Bot.say("Input paused for getting stadium...")
+		robot.moveMouse(68,139)
+		robot.mouseClick();
+		robot.mouseToggle("down");
+		//popup located at x48,y135
+		}
+				if (message === "%seaport") {
+		acceptInput = false
+		//button located at x30,y117
+		setTimeout(acceptInputTrue, 5000);
+		setTimeout(selectMarina,2000);
+		Bot.say("Input paused for getting seaport...")
+		robot.moveMouse(68,139)
+		robot.mouseClick();
+		robot.mouseToggle("down");
+		//popup located at x48,y135
+		}
+						if (message === "%airport") {
+		acceptInput = false
+		//button located at x30,y117
+		setTimeout(acceptInputTrue, 5000);
+		setTimeout(selectMarina,2000);
+		Bot.say("Input paused for getting airport...")
+		robot.moveMouse(68,139)
+		robot.mouseClick();
+		robot.mouseToggle("down");
+		//popup located at x48,y135
+		}
 	}
+	//end sim city mode
 
  if(chatter.message === '%return') {
 	robot.keyTap("enter");
@@ -222,6 +367,57 @@ if (game == "s2k") {
 }
 	
 });
+
+// simcity 2000 functions
+function selectTreatement(){
+	robot.dragMouse(71,161)
+	robot.mouseToggle("up")
+}
+function selectSeaPort(){
+	robot.dragMouse(94,143)
+	robot.mouseToggle("up")
+}
+function selectAirport(){
+	robot.dragMouse(94,157)
+	robot.mouseToggle("up")
+}
+
+function selectPark(){
+	robot.dragMouse(85,187)
+	robot.mouseToggle("up")
+}
+function selectBigPark(){
+	robot.dragMouse(85,208)
+	robot.mouseToggle("up")
+}
+function selectZoo(){
+	robot.dragMouse(85,228)
+	robot.mouseToggle("up")
+}
+function selectStadium(){
+	robot.dragMouse(85,241)
+	robot.mouseToggle("up")
+}
+function selectMarina(){
+	robot.dragMouse(85,245)
+	robot.mouseToggle("up")
+}
+function selectPolice(){
+	robot.dragMouse(58,210)
+	robot.mouseToggle("up")
+}
+function selectFire(){
+	robot.dragMouse(58,228)
+	robot.mouseToggle("up")
+}
+function selectHospital(){
+	robot.dragMouse(58,241)
+	robot.mouseToggle("up")
+}
+function selectPrison(){
+	robot.dragMouse(58,245)
+	robot.mouseToggle("up")
+}
 function selectSchool(){
 	robot.dragMouse(39,186)
 	robot.mouseToggle("up")
@@ -273,6 +469,13 @@ function waterPump(){
 function waterTower() {
 	robot.dragMouse(72,153)
 	robot.mouseToggle("up")
+	}
+
+//end of simcity mode
+
+function command(command,name) {
+	var data = { command: command, name: name}
+	ioServer.emit("command",data)
 	}
 
 //output keypress
