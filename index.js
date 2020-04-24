@@ -37,18 +37,37 @@ Bot.on('error', err => {
 
 //possible "click" "arakey"
 
-var gameMode = "click";
-var game = "s2k";
+var gameMode = config.game.mode;
+var game = config.game.engine;
+
+
+
+var minX = 3
+var maxX = 665
+var minY = 35
+var maxY = 515
+
+if (gamme === "s2k") {
+	var minX = 3
+	var maxX = 665
+	var minY = 35
+	var maxY = 515
+}
+if (gamme === "scumm") {
+	var minX = 3
+	var maxX = 800
+	var maxY = 454 + minX
+}
+
+
 
 var acceptInput = true;
  
 Bot.on('message', chatter => {
   if(chatter.message === '!help') {
-	Bot.say('Input keyboard key by typing %<Key> Ex: %a = typing a');
+	if (game != "scumm ") { Bot.say('Input keyboard key by typing %<Key> Ex: %a = typing a'); }
 	Bot.say('Click on the stream to control the mouse');
-	if ( game == "s2k" ) {
-	Bot.say('SimCity2k Commands are available here: https://00stack.in/twitchplaydos');	
-	}
+	if ( game == "s2k" ) {	Bot.say('SimCity2k Commands are available here: https://00stack.in/twitchplaydos');	}
   }
 var name = chatter.display_name;
 var message = chatter.message;
@@ -95,7 +114,7 @@ if (game == "s2k") {
 		acceptInput = false
 		//button located at x30,y117
 		setTimeout(acceptInputTrue, 5000);
-		setTimeout(waterPump,2000);
+		setTimeout(waterPipe,2000);
 		Bot.say("Input paused for getting waterpipe...")
 		robot.moveMouse(50,111)
 		robot.mouseClick();
@@ -535,10 +554,6 @@ console.log(robot.getMousePos());
 api.clientID = config.twitch.apiId;
 
 
-var minX = 3
-var maxX = 665
-var minY = 35
-var maxY = 515
 
 var screenX = 800
 var screenY = 600
