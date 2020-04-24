@@ -47,13 +47,13 @@ var maxX = 665
 var minY = 35
 var maxY = 515
 
-if (gamme === "s2k") {
+if (game === "s2k") {
 	var minX = 3
 	var maxX = 665
 	var minY = 35
 	var maxY = 515
 }
-if (gamme === "scumm") {
+if (game === "scumm") {
 	var minX = 3
 	var maxX = 800
 	var maxY = 454 + minX
