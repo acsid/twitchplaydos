@@ -466,6 +466,10 @@ function waterPump(){
 	robot.dragMouse(72,133)
 	robot.mouseToggle("up")
 }
+function waterPipe(){
+	robot.dragMouse(72,123)
+	robot.mouseToggle("up")
+}
 function waterTower() {
 	robot.dragMouse(72,153)
 	robot.mouseToggle("up")
