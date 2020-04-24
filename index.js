@@ -521,9 +521,9 @@ api.clientID = config.twitch.apiId;
 
 
 var minX = 3
-var maxX = 643
+var maxX = 665
 var minY = 35
-var maxY = 427
+var maxY = 515
 
 var screenX = 800
 var screenY = 600
