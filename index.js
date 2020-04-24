@@ -91,6 +91,17 @@ if (game == "s2k") {
 		robot.mouseToggle("down");
 		//popup located at x48,y135
 		}
+	if (message === "%waterpipe") {
+		acceptInput = false
+		//button located at x30,y117
+		setTimeout(acceptInputTrue, 5000);
+		setTimeout(waterPump,2000);
+		Bot.say("Input paused for getting waterpipe...")
+		robot.moveMouse(50,111)
+		robot.mouseClick();
+		robot.mouseToggle("down");
+		//popup located at x48,y135
+		}
 	if (message === "%watertower") {
 		acceptInput = false
 		//button located at x30,y117
