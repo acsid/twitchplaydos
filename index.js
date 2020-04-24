@@ -43,9 +43,9 @@ var game = config.game.engine;
 
 
 var minX = 3
-var maxX = 665
+var maxX = 800
 var minY = 35
-var maxY = 515
+var maxY = 454 + minX
 
 if (game === "s2k") {
 	var minX = 3
