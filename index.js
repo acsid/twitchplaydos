@@ -47,7 +47,7 @@ Bot.on('message', chatter => {
 	Bot.say('Input keyboard key by typing %<Key> Ex: %a = typing a');
 	Bot.say('Click on the stream to control the mouse');
 	if ( game == "s2k" ) {
-	Bot.say('SimCity2k Commands are available here: ');	
+	Bot.say('SimCity2k Commands are available here: https://00stack.in/twitchplaydos');	
 	}
   }
 var name = chatter.display_name;
@@ -102,11 +102,11 @@ if (game == "s2k") {
 		robot.mouseToggle("down");
 		//popup located at x48,y135
 		}
-			if (message === "%treatement") {
+	if (message === "%treatement") {
 		acceptInput = false
 		//button located at x30,y117
 		setTimeout(acceptInputTrue, 5000);
-		setTimeout(select,2000);
+		setTimeout(selectTreatement,2000);
 		Bot.say("Input paused for getting watertower...")
 		robot.moveMouse(50,111)
 		robot.mouseClick();
@@ -539,20 +539,18 @@ const clickData = JSON.parse(data);
 console.log(robot.getMousePos());
 var cx = clickData.x * screenX
 var cy = clickData.y * screenY
-if (acceptInput) {
-if (cx > minX && cx < maxX && cy > minY && cy < maxY){
-    console.log("validclick")
-console.log(clickData.x, clickData.y);
-if (gamemode = "click") {
-robot.moveMouse(clickData.x * 800,clickData.y * 600);
-if ( game == "s2k" ){
-}
-else { robot.mouseClick(); }
-}
-}
-console.dir(clickData);
-ioServer.emit("clickData",clickData)
-}
+	if (acceptInput) {
+		if (cx > minX && cx < maxX && cy > minY && cy < maxY){
+			console.log("validclick")
+		console.log(clickData.x, clickData.y);
+		if (gamemode = "click") {
+			robot.moveMouse(clickData.x * 800,clickData.y * 600);
+			robot.mouseClick();
+		}
+		}
+	console.dir(clickData);
+	ioServer.emit("clickData",clickData)
+	}
 //console.log(clickData.x, clickData.y);
 //robot.moveMouse(clickData.x * 800,clickData.y * 600);
 //robot.mouseClick();
