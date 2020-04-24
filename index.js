@@ -414,7 +414,7 @@ function selectMarina(){
 	robot.mouseToggle("up")
 }
 function selectPolice(){
-	robot.dragMouse(58,210)
+	robot.dragMouse(58,205)
 	robot.mouseToggle("up")
 }
 function selectFire(){
@@ -478,7 +478,7 @@ function waterPump(){
 	robot.mouseToggle("up")
 }
 function waterPipe(){
-	robot.dragMouse(72,113)
+	robot.dragMouse(72,108)
 	robot.mouseToggle("up")
 }
 function waterTower() {
