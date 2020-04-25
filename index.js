@@ -36,6 +36,7 @@ Bot.on('error', err => {
 })
 
 //possible "click" "arakey"
+// Game : Scumm, s2k
 
 var gameMode = config.game.mode;
 var game = config.game.engine;
