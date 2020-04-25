@@ -46,7 +46,7 @@ var game = config.game.engine;
 var minX = 3
 var maxX = 800
 var minY = 35
-var maxY = 454 + minX
+var maxY = 454 + minY
 
 if (game === "s2k") {
 	var minX = 3
@@ -57,7 +57,7 @@ if (game === "s2k") {
 if (game === "scumm") {
 	var minX = 3
 	var maxX = 800
-	var maxY = 454 + minX
+	var maxY = 454 + minY
 }
 
 
