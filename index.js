@@ -395,6 +395,9 @@ if (game == "s2k") {
 	robot.keyTap("enter");
 	keytap("return");
 	}
+if (chatter.message === "%rclk") {
+	robot.mouseClick("right");
+	}
 }
 	
 });
