@@ -57,7 +57,7 @@ if (game === "s2k") {
 if (game === "scumm") {
 	var minX = 3
 	var maxX = 800
-	var maxY = 500 + minY
+	var maxY = 495 + minY
 }
 
 
