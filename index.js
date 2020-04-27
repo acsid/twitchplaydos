@@ -57,7 +57,7 @@ if (game === "s2k") {
 if (game === "scumm") {
 	var minX = 3
 	var maxX = 800
-	var maxY = 495 + minY
+	var maxY = 492 + minY
 }
 
 
@@ -394,6 +394,10 @@ if (game == "s2k") {
  if(chatter.message === '%return') {
 	robot.keyTap("enter");
 	keytap("return");
+	}
+if(chatter.message === '%esc') {
+	robot.keyTap("escape");
+	keytap("escape");
 	}
 if (chatter.message === "%rclk") {
 	robot.mouseClick("right");
