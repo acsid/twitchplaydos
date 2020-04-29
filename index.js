@@ -85,6 +85,22 @@ if (message.length === 2) {
 			break;
 	}
 	}
+	if (message == "up") {
+		robot.keyTap("up")
+		keytap("up",name)
+	}
+	if (message == "dn") {
+		robot.keyTap("down")
+		keytap("down",name)
+	}
+	if (message == "l") {
+		robot.keyTap("left")
+		keytap("left",name)
+	}
+	if (message == "r") {
+		robot.keyTap("right")
+		keytap("right",name)
+	}
 	
 	
 //sim city mode should be a plugin later
