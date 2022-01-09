@@ -85,40 +85,46 @@ var message = chatter.message;
 console.log(chatter);
 
 if (acceptInput) {
-if (message.length === 2) {
-	switch(chatter.message.charAt(0)){
+	if (message.length === 2) {
+		switch(chatter.message.charAt(0)){
 		//key input command
 		case '%':
 			robot.keyTap(chatter.message.charAt(1))
 			keytap(chatter.message.charAt(1),name)
 			break;
+		}
 	}
-	}
-	
-		var keytime = 1
-		var keypress = 0
+	//set keystrokes variables
+	var keytime = 1
+	var keypress = 0
+	//check if the 2nd string is a number set keystrokes to this number 
 	if (isNumeric(message.split(" ")[1])) {
 		keytime = message.split(" ")[1];
+		//hard limit to 10 keystrokes
+		if (keytime > 10) { keytime = 10 }
 	}
-	
+	//keyboard up
 	if (message.split(" ")[0] == "up") {
 		while ( keypress < keytime ) {
 			keypress++;
 			keytap("up",name);
 		}
 	}
+	//keyboard dn
 	if (message.split(" ")[0] == "dn") {
 		while ( keypress < keytime ) {
 			keypress++;
 			keytap("down",name);
 		}
 	}
+	//keyboard Left
 	if (message.split(" ")[0] == "l") {
 		while ( keypress < keytime ) {
 			keypress++;
 			keytap("left",name);
 		}
 	}
+	//keyboard Right
 	if (message.split(" ")[0] == "r") {
 		while ( keypress < keytime ) {
 			keypress++;
@@ -129,13 +135,13 @@ if (message.length === 2) {
 	
 
 
- if(chatter.message === '%return') {
-	robot.keyTap("enter");
-	keytap("return");
+	if(chatter.message === '%return') {
+		robot.keyTap("enter");
+		keytap("return",name);
 	}
 if(chatter.message === '%esc') {
 	robot.keyTap("escape");
-	keytap("escape");
+	keytap("escape",name);
 	}
 if (chatter.message === "%rclk") {
 	robot.mouseClick("right");
