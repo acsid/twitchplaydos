@@ -97,6 +97,9 @@ if (message.length === 2) {
 	
 		var keytime = 1
 		var keypress = 0
+	if (isNumeric(message.split(" ")[1])) {
+		keytime = message.split(" ")[1];
+	}
 	
 	if (message.split(" ")[0] == "up") {
 		while ( keypress < keytime ) {
