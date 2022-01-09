@@ -99,8 +99,7 @@ if (message.length === 2) {
 		var keypress = 0
 		while ( keypress < keytime ) {
 				keypress++;
-			Promise.delay(keypress * 500).then(() => robot.keyTap("up")
-			keytap("up",name));
+			Promise.delay(keypress * 500).then(() => keyTap("up",name));
 		}
 	}
 	if (message.split(" ")[0] == "dn") {
@@ -552,6 +551,7 @@ function command(command,name) {
 
 //output keypress
 function keytap(keypress,name) {
+	robot.keyTap(name)
 	var data = { key: keypress, name: name};
 	ioServer.emit("keypress",data)
 	console.log(name + data)
