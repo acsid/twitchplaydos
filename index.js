@@ -94,24 +94,33 @@ if (message.length === 2) {
 			break;
 	}
 	}
-	if (message.split(" ")[0] == "up") {
-		var keytime = 10
+	
+		var keytime = 1
 		var keypress = 0
+	
+	if (message.split(" ")[0] == "up") {
 		while ( keypress < keytime ) {
+			keypress++;
 			keytap("up",name);
 		}
 	}
 	if (message.split(" ")[0] == "dn") {
-		robot.keyTap("down")
-		keytap("down",name)
+		while ( keypress < keytime ) {
+			keypress++;
+			keytap("down",name);
+		}
 	}
 	if (message.split(" ")[0] == "l") {
-		robot.keyTap("left")
-		keytap("left",name)
+		while ( keypress < keytime ) {
+			keypress++;
+			keytap("left",name);
+		}
 	}
 	if (message.split(" ")[0] == "r") {
-		robot.keyTap("right")
-		keytap("right",name)
+		while ( keypress < keytime ) {
+			keypress++;
+			keytap("right",name);
+		}
 	}
 	
 	
