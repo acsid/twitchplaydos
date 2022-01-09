@@ -99,7 +99,7 @@ if (message.length === 2) {
 		var keypress = 0
 		while ( keypress < keytime ) {
 				keypress++;
-			new Promise.delay(keypress * 500).then(() => keyTap("up",name));
+			 keyTap.delay(keypress * 500).then(() => keyTap("up",name));
 		}
 	}
 	if (message.split(" ")[0] == "dn") {
