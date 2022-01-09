@@ -72,7 +72,7 @@ if (game === "scumm") {
 
 
 var acceptInput = true;
- 
+ setKeyboardDelay(100);
 Bot.on('message', chatter => {
   if(chatter.message === '!help') {
 	if (game != "scumm ") { Bot.say('Input keyboard key by typing %<Key> Ex: %a = typing a'); }
@@ -95,11 +95,10 @@ if (message.length === 2) {
 	}
 	}
 	if (message.split(" ")[0] == "up") {
-		var keytime = 1
+		var keytime = 10
 		var keypress = 0
 		while ( keypress < keytime ) {
-				keypress++;
-			 keyTap.delay(keypress * 500).then(() => keyTap("up",name));
+		 keyTap("up",name);
 		}
 	}
 	if (message.split(" ")[0] == "dn") {
