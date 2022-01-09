@@ -98,7 +98,7 @@ if (message.length === 2) {
 		var keytime = 10
 		var keypress = 0
 		while ( keypress < keytime ) {
-		 keyTap("up",name);
+			keytap("up",name);
 		}
 	}
 	if (message.split(" ")[0] == "dn") {
