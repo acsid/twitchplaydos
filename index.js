@@ -141,7 +141,7 @@ function command(command,name) {
 
 //output keypress
 function keytap(keypress,name) {
-	robot.keyTap(name)
+	robot.keyTap(keypress)
 	var data = { key: keypress, name: name};
 	ioServer.emit("keypress",data)
 	console.log(name + data)
