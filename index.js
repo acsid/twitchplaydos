@@ -85,19 +85,19 @@ if (message.length === 2) {
 			break;
 	}
 	}
-	if (message == "up") {
+	if (message.split(" ")[0] == "up") {
 		robot.keyTap("up")
 		keytap("up",name)
 	}
-	if (message == "dn") {
+	if (message.split(" ")[0] == "dn") {
 		robot.keyTap("down")
 		keytap("down",name)
 	}
-	if (message == "l") {
+	if (message.split(" ")[0] == "l") {
 		robot.keyTap("left")
 		keytap("left",name)
 	}
-	if (message == "r") {
+	if (message.split(" ")[0] == "r") {
 		robot.keyTap("right")
 		keytap("right",name)
 	}
