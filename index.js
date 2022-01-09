@@ -72,7 +72,7 @@ if (game === "scumm") {
 
 
 var acceptInput = true;
- setKeyboardDelay(100);
+ robot.setKeyboardDelay(100);
 Bot.on('message', chatter => {
   if(chatter.message === '!help') {
 	if (game != "scumm ") { Bot.say('Input keyboard key by typing %<Key> Ex: %a = typing a'); }
