@@ -35,6 +35,15 @@ Bot.on('error', err => {
   console.log(err)
 })
 
+
+
+function isNumeric(str) {
+  if (typeof str != "string") return false // we only process strings!  
+  return !isNaN(str) && // use type coercion to parse the _entirety_ of the string (`parseFloat` alone does not do this)...
+         !isNaN(parseFloat(str)) // ...and ensure strings of whitespace fail
+}
+
+
 //possible "click" "arakey"
 // Game : Scumm, s2k
 
@@ -86,8 +95,13 @@ if (message.length === 2) {
 	}
 	}
 	if (message.split(" ")[0] == "up") {
-		robot.keyTap("up")
-		keytap("up",name)
+		var keytime = 1
+		var keypress = 0
+		while ( keypress < keytime ) {
+				keypress++;
+			Promise.delay(keypress * 500).then(() => robot.keyTap("up")
+			keytap("up",name));
+		}
 	}
 	if (message.split(" ")[0] == "dn") {
 		robot.keyTap("down")
