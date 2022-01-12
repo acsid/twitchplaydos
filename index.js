@@ -15,6 +15,10 @@ var heat = new ws('wss://heat-ebs.j38.net/channel/${config.heat.id}');
  heat.onopen = function () {
    console.log('WebSocket Client Connected');
  };
+  heat.onclose = function () {
+   console.log('WebSocket Client Disconnected');
+ };
+
 
 heat.onmessage = function(ebs) {
     console.log(ebs);
