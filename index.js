@@ -13,31 +13,31 @@ var ioServer = require('socket.io')(http);
 const config = require('./config.json');
 //const socket = io('wss://heat-ebs.j38.net/channel/${config.heat.id}');
 
-var heat = new ws('wss://heat-api.j38.net/channel/${config.heat.id}');
+//var heat = new ws('wss://heat-api.j38.net/channel/${config.heat.id}');
 
- heat.on('open', function () {
-   console.log('WebSocket Client Connected');
- });
+ //heat.on('open', function () {
+  // console.log('WebSocket Client Connected');
+ //});
  
- heat.on('close', function () {
-   console.log('WebSocket Client Disonnected');
- });
+// heat.on('close', function () {
+//   console.log('WebSocket Client Disonnected');
+// });
  
- heat.on('message' ,function(ebs) {
-    console.log(ebs);
+// heat.on('message' ,function(ebs) {
+ //   console.log(ebs);
     // ebs.on('error', function(error) {
         // console.log("Connection Error: " + error.toString());
     // });
-		 ebs.on('message', function(message) {
-			console.log(message);
+	//	 ebs.on('message', function(message) {
+	//		console.log(message);
           //  Parse message data.
             // var data = JSON.parse(message.data);
 
           //  Write to console.
             // console.log(data);
-		 });
-	});
-	
+	//	 });
+//	});
+//	
 	
 
 //=======================================
