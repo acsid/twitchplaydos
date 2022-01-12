@@ -14,7 +14,7 @@ var heat = new ws();
 
 heat.connect('wss://heat-ebs.j38.net/channel/${config.heat.id}');
 
-client.on('connect', function(connection) {
+heat.on('connect', function(connection) {
     console.log('WebSocket Client Connected');
 });
 //=======================================
