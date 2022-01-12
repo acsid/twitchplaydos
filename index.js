@@ -22,7 +22,7 @@ heat.on('connect', function(connection) {
 	});
 	
 	
-	heat.on('message', (message) => {
+	heat.on('message', function(message) {
             // Parse message data.
             var data = JSON.parse(message.data);
 
