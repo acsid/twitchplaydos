@@ -206,6 +206,7 @@ var screenY = 600
 
 
 socket.on('connect', () => {
+	console.log("Connected to heat server")
 socket.emit("channel",config.heat.id)
 });
 
