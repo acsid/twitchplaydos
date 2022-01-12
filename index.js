@@ -20,6 +20,7 @@ heat.on('connect', function(ebs) {
         console.log("Connection Error: " + error.toString());
     });
 		ebs.on('message', function(message) {
+			console.log(message);
             // Parse message data.
             var data = JSON.parse(message.data);
 
