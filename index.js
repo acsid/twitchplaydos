@@ -28,14 +28,14 @@ var heat = new ws('wss://heat-api.j38.net/channel/${config.heat.id}');
     // ebs.on('error', function(error) {
         // console.log("Connection Error: " + error.toString());
     // });
-		// ebs.on('message', function(message) {
-			// console.log(message);
+		 ebs.on('message', function(message) {
+			console.log(message);
           //  Parse message data.
             // var data = JSON.parse(message.data);
 
           //  Write to console.
             // console.log(data);
-		// });
+		 });
 	});
 	
 	
