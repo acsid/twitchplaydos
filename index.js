@@ -1,6 +1,6 @@
 var io = require('socket.io-client')
 var robot = require("robotjs");
-const socket = io('wss://heat-ebs.j38.net/');
+
 const TwitchBot = require('twitch-bot');
 var api = require('twitch-api-v5');
 var express = require('express')();
@@ -8,7 +8,7 @@ var http = require('http').createServer(express);
 
 var ioServer = require('socket.io')(http);
 const config = require('./config.json');
-
+const socket = io('wss://heat-ebs.j38.net/channel/${config.heat.id}');
 
 //=======================================
 //= CONFIGURATION  SEE config.json
@@ -206,8 +206,7 @@ var screenY = 600
 
 
 socket.on('connect', () => {
-	console.log("Connected to heat server")
-socket.emit("channel",config.heat.id)
+	console.log("Connected to heat server");
 });
 
 
