@@ -16,7 +16,10 @@ heat.connect('wss://heat-ebs.j38.net/channel/${config.heat.id}');
 
 heat.on('connect', function(connection) {
     console.log('WebSocket Client Connected');
-});
+    connection.on('error', function(error) {
+        console.log("Connection Error: " + error.toString());
+    });
+	});
 //=======================================
 //= CONFIGURATION  SEE config.json
 //=======================================
