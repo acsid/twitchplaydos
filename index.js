@@ -20,6 +20,15 @@ heat.on('connect', function(connection) {
         console.log("Connection Error: " + error.toString());
     });
 	});
+	
+	
+	heat.on('message', (message) => {
+            // Parse message data.
+            let data = JSON.parse(message.data);
+
+            // Write to console.
+            console.log(data);
+		});
 //=======================================
 //= CONFIGURATION  SEE config.json
 //=======================================
