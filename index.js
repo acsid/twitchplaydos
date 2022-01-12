@@ -13,7 +13,7 @@ var ioServer = require('socket.io')(http);
 const config = require('./config.json');
 //const socket = io('wss://heat-ebs.j38.net/channel/${config.heat.id}');
 
-var heat = new WebSocket('wss://heat-ebs.j38.net/channel/${config.heat.id}');
+var heat = new ws('wss://heat-ebs.j38.net/channel/${config.heat.id}');
 
  heat.on('open', function () {
    console.log('WebSocket Client Connected');
