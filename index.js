@@ -1,5 +1,6 @@
-var io = require('socket.io-client')
+//var io = require('socket.io-client')
 var robot = require("robotjs");
+var ws = require('websocket').client;
 
 const TwitchBot = require('twitch-bot');
 var api = require('twitch-api-v5');
@@ -8,8 +9,14 @@ var http = require('http').createServer(express);
 
 var ioServer = require('socket.io')(http);
 const config = require('./config.json');
-const socket = io('wss://heat-ebs.j38.net/channel/${config.heat.id}');
+//const socket = io('wss://heat-ebs.j38.net/channel/${config.heat.id}');
+var heat = new ws();
 
+heat.connect('wss://heat-ebs.j38.net/channel/${config.heat.id}');
+
+client.on('connect', function(connection) {
+    console.log('WebSocket Client Connected');
+});
 //=======================================
 //= CONFIGURATION  SEE config.json
 //=======================================
@@ -205,28 +212,28 @@ var screenX = 800
 var screenY = 600
 
 
-socket.on('connect', () => {
-	console.log("Connected to heat server");
-});
+// socket.on('connect', () => {
+	// console.log("Connected to heat server");
+// });
 
 
-socket.on('click',(data) => {
-const clickData = JSON.parse(data);
-console.log(robot.getMousePos());
-var cx = clickData.x * screenX
-var cy = clickData.y * screenY
-	if (acceptInput) {
-		if (cx > minX && cx < maxX && cy > minY && cy < maxY){
-			console.log("validclick")
-		console.log(clickData.x, clickData.y);
-		if (gamemode = "click") {
-			robot.moveMouse(clickData.x * 800,clickData.y * 600);
-			robot.mouseClick();
-		}
-		}
-	console.dir(clickData);
-	ioServer.emit("clickData",clickData)
-	}
+// socket.on('click',(data) => {
+// const clickData = JSON.parse(data);
+// console.log(robot.getMousePos());
+// var cx = clickData.x * screenX
+// var cy = clickData.y * screenY
+	// if (acceptInput) {
+		// if (cx > minX && cx < maxX && cy > minY && cy < maxY){
+			// console.log("validclick")
+		// console.log(clickData.x, clickData.y);
+		// if (gamemode = "click") {
+			// robot.moveMouse(clickData.x * 800,clickData.y * 600);
+			// robot.mouseClick();
+		// }
+		// }
+	// console.dir(clickData);
+	// ioServer.emit("clickData",clickData)
+	// }
 //console.log(clickData.x, clickData.y);
 //robot.moveMouse(clickData.x * 800,clickData.y * 600);
 //robot.mouseClick();
