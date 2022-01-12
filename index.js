@@ -12,14 +12,7 @@ const config = require('./config.json');
 //const socket = io('wss://heat-ebs.j38.net/channel/${config.heat.id}');
 var heat = new ws();
 
-heat.connect('wss://heat-ebs.j38.net/channel/${config.heat.id}');
 
-heat.on('connect', function(connection) {
-    console.log('WebSocket Client Connected');
-    connection.on('error', function(error) {
-        console.log("Connection Error: " + error.toString());
-    });
-	});
 //=======================================
 //= CONFIGURATION  SEE config.json
 //=======================================
@@ -215,9 +208,20 @@ var screenX = 800
 var screenY = 600
 
 
-// socket.on('connect', () => {
-	// console.log("Connected to heat server");
-// });
+
+heat.connect('wss://heat-ebs.j38.net/channel/${config.heat.id}');
+
+//heat.on('connect', function(connection) {
+  //  console.log('WebSocket Client Connected');
+    //connection.on('error', function(error) {
+     //   console.log("Connection Error: " + error.toString());
+   // });
+//	});
+
+
+heat.on('connect', () => {
+ console.log("Connected to heat server");
+});
 
 
 // socket.on('click',(data) => {
