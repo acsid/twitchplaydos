@@ -1,6 +1,8 @@
+import WebSocket from 'ws';
+
 //var io = require('socket.io-client')
 var robot = require("robotjs");
-var ws = require('websocket').w3cwebsocket;
+//var ws = require('websocket').w3cwebsocket;
 
 const TwitchBot = require('twitch-bot');
 var api = require('twitch-api-v5');
@@ -10,17 +12,18 @@ var http = require('http').createServer(express);
 var ioServer = require('socket.io')(http);
 const config = require('./config.json');
 //const socket = io('wss://heat-ebs.j38.net/channel/${config.heat.id}');
-var heat = new ws('wss://heat-ebs.j38.net/channel/${config.heat.id}');
 
- heat.onopen = function () {
+var heat = new WebSocket('wss://heat-ebs.j38.net/channel/${config.heat.id}');
+
+ heat.on('open', function () {
    console.log('WebSocket Client Connected');
- };
-  heat.onclose = function () {
-   console.log('WebSocket Client Disconnected');
- };
-
-
-heat.onmessage = function(ebs) {
+ });
+ 
+ heat.on('close', function () {
+   console.log('WebSocket Client Disonnected');
+ });
+ 
+ heat.on('message' ,function(ebs) {
     console.log(ebs);
     // ebs.on('error', function(error) {
         // console.log("Connection Error: " + error.toString());
@@ -33,7 +36,7 @@ heat.onmessage = function(ebs) {
           //  Write to console.
             // console.log(data);
 		// });
-	};
+	});
 	
 	
 
