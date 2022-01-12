@@ -1,8 +1,8 @@
-import WebSocket from 'ws';
+
 
 //var io = require('socket.io-client')
 var robot = require("robotjs");
-//var ws = require('websocket').w3cwebsocket;
+var ws = require('ws');
 
 const TwitchBot = require('twitch-bot');
 var api = require('twitch-api-v5');
