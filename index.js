@@ -24,7 +24,7 @@ heat.on('connect', function(connection) {
 	
 	heat.on('message', (message) => {
             // Parse message data.
-            let data = JSON.parse(message.data);
+            var data = JSON.parse(message.data);
 
             // Write to console.
             console.log(data);
