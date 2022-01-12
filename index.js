@@ -14,21 +14,22 @@ var heat = new ws();
 
 heat.connect('wss://heat-ebs.j38.net/channel/${config.heat.id}');
 
-heat.on('connect', function(connection) {
+heat.on('connect', function(ebs) {
     console.log('WebSocket Client Connected');
-    connection.on('error', function(error) {
+    ebs.on('error', function(error) {
         console.log("Connection Error: " + error.toString());
     });
-	});
-	
-	
-	heat.on('message', function(message) {
+		ebs.on('message', function(message) {
             // Parse message data.
             var data = JSON.parse(message.data);
 
             // Write to console.
             console.log(data);
 		});
+	});
+	
+	
+
 //=======================================
 //= CONFIGURATION  SEE config.json
 //=======================================
